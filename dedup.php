@@ -5,7 +5,7 @@ Plugin Name: Dedup
 Description: This plugin hooks into the Brafton WordPress Importer Plugin. It tries to catch duplicate posts and make them drafts.
 Author: Ed Hornig @ Brafton
 */
-add_action('brafton_hook', 'brafton_dedup', 1, 2);
+add_action('brafton_article_after_save_hook', 'brafton_dedup', 1, 2);
 
 function brafton_dedup($post_id, $article){
   $title_check = sanitize_title(get_the_title($post_id));
