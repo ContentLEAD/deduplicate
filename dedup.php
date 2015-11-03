@@ -6,6 +6,7 @@ Description: This plugin hooks into the Brafton WordPress Importer Plugin. It tr
 Author: Ed Hornig @ Brafton
 */
 add_action('brafton_article_after_save_hook', 'brafton_dedup', 1, 2);
+add_action('brafton_video_after_save_hook', 'brafton_dedup', 1, 2);
 
 function brafton_dedup($post_id, $article){
   $title_check = sanitize_title(get_the_title($post_id));
